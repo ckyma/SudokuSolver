@@ -12,6 +12,7 @@
  */
 
 #include <iostream>
+#include <vector>
 
 #define N 9
 #define UNDEFINED 0
@@ -158,6 +159,28 @@ int main(int argc, char** argv) {
         sudoRoot.print();
     }
     delete [] gridRoot;
+    
+    cout << endl;
+    
+    // Using Vector of Vector to store
+    vector<vector<int>> gridVector(N, vector<int>(N, 0));
+    for(int i = 0; i < N; ++i){
+        for(int j = 0; j < N; ++j){
+            cout << gridVector[i][j] << " ";
+        }
+        cout << endl;
+    }
+    
+    cout << endl;
+    
+    vector<vector<int>>* gridVectorPtr = new vector<vector<int>>(N, vector<int>(N, 0));
+    for(int i = 0; i < N; ++i){
+        for(int j = 0; j < N; ++j){
+            cout << (*gridVectorPtr)[i][j] << " ";
+        }
+        cout << endl;
+    }
+    delete gridVectorPtr;
     
     return 0;
 }
